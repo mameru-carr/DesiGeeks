@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
+const env = process.env.NODE_ENV || 'development';
 const PORT = process.env.PORT || 5000;
 const uri = process.env.ATLAS_URI;
 
