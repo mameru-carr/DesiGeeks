@@ -13,7 +13,36 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect(uri);
+async function connectMongoDBAsync() {
+	try {
+		let connection = await mongoose.connect(uri);
+		console.log("Successfully connected to the database");
+
+		try {
+			console.log("Ping Database to check connection");
+			let ping = await mongoose.connection.db.admin().ping();
+			if (ping.ok === 1) {
+				console.log("Atlas Database Ping Successfull");
+			}
+			else {
+				console.log("Atlas Database Ping Failed");
+			}
+		}
+		catch (error) {
+			console.log(error);
+		}
+	}
+
+	catch (error) {
+		console.log(error);
+	}
+
+	finally {
+		await mongoose.connection.close();
+	}
+}
+
+connectMongoDBAsync();
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
