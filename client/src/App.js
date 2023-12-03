@@ -1,12 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import dotenv from 'dotenv';
-import { useState, useEffect } from 'react';
-
-const dotenv_config = dotenv.config();
-
-const env = process.env.REACT_ENV || 'development';
-const api_base_uri = process.env.REACT_API_URI || 'http://localhost:5000/api';
 
 function App() {
   const [data, setData] = useState('');
