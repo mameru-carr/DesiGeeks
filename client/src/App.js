@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import dotenv from 'dotenv';
+
+const dotenv_config = dotenv.config();
 
 function App() {
   return (
