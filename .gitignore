@@ -1,3 +1,6 @@
+# Vim
+*.swp
+
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
