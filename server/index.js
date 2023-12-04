@@ -14,7 +14,7 @@ const build_dir = path.join(__dirname, '..', 'client', 'build');
 // middleware
 app.use(cors());
 app.use(express.json());
-app.use(static(path.join(build_dir)));
+app.use(express.static(path.join(build_dir)));
 
 // Connect to MongoDB
 async function connectMongoDBAsync() {
