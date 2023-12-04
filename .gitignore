@@ -1,6 +1,10 @@
 # Vim
 *.swp
 
+# Vercel
+.vercel
+.vercel/*
+
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
