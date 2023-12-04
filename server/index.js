@@ -3,11 +3,13 @@ const dotenv_config = require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const env = process.env.NODE_ENV || 'development';
 const PORT = process.env.PORT || 5000;
 const uri = process.env.NODE_ATLAS_URI;
+const build_dir = path.join(__dirname, '..', 'client', 'build');
 
 // middleware
 app.use(cors());
@@ -50,6 +52,5 @@ app.listen(PORT, () => {
 });
 
 app.get('/api/check', (req, res) => {
-
 	res.json({ message: 'Hello from the API!' });
 });
