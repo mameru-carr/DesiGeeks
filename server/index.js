@@ -52,6 +52,14 @@ app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
 
+app.get('/', (req, res) => {
+	res.sendFile(path.join(build_dir, 'index.html'));
+});
+
+app.get('/index', (req, res) => {
+	res.sendFile(path.join(build_dir, 'index.html'));
+});
+
 app.get('/api/check', (req, res) => {
 	res.json({ message: 'Hello from the API!' });
 });
