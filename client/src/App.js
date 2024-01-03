@@ -17,7 +17,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
 	    <div className="App">
-	      <h1>MERN Project</h1>
+	      <h1>DesiGeeks</h1>
 	      <p>Data from the server: {data}</p>
 	    </div>
       </header>
